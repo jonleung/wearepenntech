@@ -1,0 +1,46 @@
+<div class="page">
+
+  <% if can? :update, @user %>
+    <%= link_to 'Edit Profile', url_for([:edit, @user]), {:class => "btn btn-primary top-right-button btn-large"} %> 
+  <% end %>
+
+  <%= render partial: "shared/page", locals: {
+    name: "#{@user.first_name} #{@user.last_name}",
+    description: @user.description,
+    image_url: @user.default_image_url
+  } %>
+
+  <div class="row">
+    <div class="span12 projects">
+      <h2>Projects:</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span12 well">
+      <% unless @projects.empty? %>
+
+        <% @projects.each do |project| %>
+          <div class="blocks-container">
+            <%= render partial: "shared/block", locals: {
+              thing: project,
+              image_url: project.default_image_url,
+              name: project.name,
+              description: project.description
+            } %>
+          </div>
+        <% end %>
+
+      <% else  %>
+        <p>Hmmm... Doesn't seem like <%= @user.first_name %> has added any projects yet.</p>
+      <% end %>
+
+    </div>
+  </div>
+
+  <%= render partial: "shared/comments", locals: {
+    commentable_type: "user",
+    commentable_id: @user.id
+  } %>  
+
+</div>

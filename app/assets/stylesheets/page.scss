@@ -1,0 +1,21 @@
+@import 'helpers';
+
+.page img {
+  @include border-radius;
+  max-height: 300px;
+}
+
+.page .description {
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+.page .projects {
+  margin-top: 20px;
+}
+
+.page .maker {
+  margin-top: 20px;
+  font-family: 'Handlee', cursive;
+  font-size: 20px;
+}

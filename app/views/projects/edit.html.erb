@@ -1,0 +1,11 @@
+<h1>Editing project</h1>
+
+<%= render 'form' %>
+
+
+<p>
+  <%= link_to 'Back', projects_path, :class => "btn" %>
+
+  <%= link_to 'Destroy', @project, method: :delete, :class => "btn  btn-danger", data: { confirm: 'Are you sure?' } %>
+</p>
+

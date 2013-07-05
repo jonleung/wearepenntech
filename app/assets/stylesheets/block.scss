@@ -1,0 +1,36 @@
+@import 'helpers';
+
+$block-width: 250px;
+$image-margin: 10px;
+
+.blocks-container {
+  display: inline-block;
+  text-align: center;
+}
+
+.block {
+  @include border-radius;
+
+  position: relative;
+  margin: 5px;
+  margin-top: 25px;
+  display: inline-block;
+  width: $block-width;
+
+  background: rgba(235, 235, 235, 1);
+
+  // color: rgba(64, 64, 64, 1);
+}
+
+.inner-block {
+  margin: 10px
+}
+
+.block .image-container {
+  margin-top: $image-margin;
+  text-align: center;
+}
+
+.block img{
+  min-width: 100%;
+}

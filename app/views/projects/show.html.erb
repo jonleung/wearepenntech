@@ -1,0 +1,29 @@
+<div class="page">
+
+  <% if can? :update, @project %>
+    <%= link_to 'Edit Project', url_for([:edit, @project]), {:class => "btn btn-primary top-right-button btn-large"} %> 
+  <% end %>
+
+
+  <%= render partial: "shared/page", locals: {
+    name: @project.name,
+    description: @project.description,
+    image_url: @project.default_image_url
+  } %>
+
+  <div class="row maker">
+    <div class="span12">
+      <div class="">
+        <% user = @project.user %>
+        Made lovingly by: <%= link_to user.username, url_for(user) %>
+      </div>
+    </div>
+  </div>
+
+  <%= render partial: "shared/comments", locals: {
+    commentable_type: "project",
+    commentable_id: @project.id
+  } %>  
+
+
+</div>

@@ -1,0 +1,15 @@
+<div>
+  <span>
+    <img src="<%= image %>">
+  </span>
+  <span>
+    <p><%= text %></p>
+  </span>
+  <span>
+    <p><%= author %></p>
+  </span>
+</div>
+<div>
+  <%= link_to 'Edit', edit_comment_path(@comment) %> |
+  <%= link_to 'Back', comments_path %>
+</div>

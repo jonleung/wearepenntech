@@ -1,0 +1,14 @@
+<div class="center">
+  <h1 class="gray title">We Are Penn Tech</h1>
+</div>
+
+<% @users.each do |user| %>
+  <div class="blocks-container">
+    <%= render partial: "shared/block", locals: {
+      thing: user,
+      image_url: user.default_image_url,
+      name: "#{user.first_name} #{user.last_name}",
+      description: user.description
+    } %>
+  </div>
+<% end %>

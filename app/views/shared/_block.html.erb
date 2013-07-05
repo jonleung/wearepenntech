@@ -1,0 +1,23 @@
+<a class="block_url" href="<%= url_for(thing) %>">
+  <div class="block">
+    <div class="inner-block">
+      <div class="image-container">
+        <img src="<%= image_url %>">
+      </div>
+      <div class="name-container">
+        <h3 class="name"><%= name %></h3>
+      </div>
+      <div class="description-container">
+        <p class="description"><%= description %></p>
+      </div>
+
+      <% if can? :update, thing %>
+        <p><%= link_to 'Edit', url_for([:edit, thing]), :class => "btn btn-primary" %>&nbsp;
+      <% end %>
+      <% if can? :destroy, thing %>
+        | &nbsp;<%= link_to 'Destroy', thing, method: :delete, :class => "btn btn-danger", data: { confirm: 'Are you sure?' } %></td></p>
+      <% end %>
+
+    </div>
+  </div>
+</a>

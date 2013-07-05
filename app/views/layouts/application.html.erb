@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>We Are Penn Tech</title>
+  
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Offside|Handlee' rel='stylesheet' type='text/css'>
+
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div>
+
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="<%= root_url %>">We Are Penn Tech</a>
+          <ul class="nav">
+            <li class="divider-vertical"></li>
+            <li class="<%= "active" if @active_class == :users %>"><a href="/">People</a></li>
+<!--             <li class="<%#= "active" if @active_class == :projects %>"><a href="/projects">Projects</a></li>
+ -->            <li class="divider-vertical"></li>
+            <% if user_signed_in? %>
+              <li class="<%= "active" if @active_class == :new_project %>"><a href="/projects/new">+ Create New Project</a></li>
+            <% end %>
+
+          </ul>
+          <ul class="nav pull-right">
+            <% if user_signed_in? %>
+              <li class="<%= "active" if @active_class == :profile %>">
+                <%= link_to 'Profile', url_for(current_user) %>
+              <li>
+              <li>
+                <%= link_to 'Account', edit_user_registration_path %>
+              </li>
+              <li><%= link_to "Logout of #{current_user.email}", destroy_user_session_path, method: :delete %><li>
+            <% else %>
+              <li><%= link_to "Sign up", new_user_registration_path %><li>
+              <li><%= link_to "Login", new_user_session_path %><li>
+
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  <div class="container main">
+
+    <% flash.each do |name, msg| %>
+      <div class="alert alert-success">
+        <%= msg %>
+      </div>
+    <% end %>
+
+    <%= yield %>
+
+  </div>
+
+</div>
+</body>
+</html>
