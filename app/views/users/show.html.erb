@@ -1,9 +1,26 @@
 <div class="page">
+  <!-- TODO, early stage of a project, don't mind copy and pasting code. 
 
+# TODO: rails_admin, 
+
+Kill the .old_git folder
+SourceTree
+
+Evaluate what you are committing:
+  http://www.sourcetreeapp.com/
+
+  Being aware for open source projects, go over actual diff with a fine tooth comb
+
+  Try working on some open source projcets to get experiance with git better
+
+-->
+
+  <!-- #TODO Simple Form -->
   <% if can? :update, @user %>
     <%= link_to 'Edit Profile', url_for([:edit, @user]), {:class => "btn btn-primary top-right-button btn-large"} %> 
   <% end %>
 
+  <!-- Todo, move row back into parent -->
   <%= render partial: "shared/page", locals: {
     name: "#{@user.first_name} #{@user.last_name}",
     description: @user.description,

@@ -4,6 +4,11 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create    
+=begin
+  for_for nested resource
+
+  if params[:user_id]; User.find(params[:user_id]); else ... end
+=end
     commentable_klass = params[:comment][:commentable_type].capitalize.constantize
     commentable_id = params[:comment][:commentable_id]
     commentable = commentable_klass.find(commentable_id)

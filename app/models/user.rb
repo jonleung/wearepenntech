@@ -51,10 +51,25 @@ class User
   field :description, type: String
   field :image_url, type: String
 
-  index username: 1 
+  index username: 1
 
   def default_image_url
     self.image_url.present? ? self.image_url.to_s : "http://i.imgur.com/koNQEql.jpg"
   end
 
+
+  # TODO, create page_data method
+  # views should have as little shit as possible
+  # page_data function to give out hash
+  # move it out in a presetner, they are models that provide a specific representation of other models
+=begin
+  @user.page_data %>
+  render Page.for_user(@user)
+  pages/_page
+  users/_page
+  Page.new(@user)
+
+  Don't be afraid to have another object and hand it that User
+=end
+  # 
 end

@@ -12,7 +12,9 @@ class Comment
                                  # because it is all embeded in the 'commentable' model anyway
   
   field :creator_id, type: Moped::BSON::ObjectId
+
   validates_presence_of :creator_id
+  belongs_to :user #TODO, make this work
 
   def creator
     return User.find(self.creator_id)

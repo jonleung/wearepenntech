@@ -1,4 +1,0 @@
-0000000000000000000000000000000000000000 b31147aba8c861f9a27263eb735e85d5211ffa83 Jonathan Leung <naruto137@gmail.com> 1372877369 -0400	commit (initial): added newly created bundled project
-b31147aba8c861f9a27263eb735e85d5211ffa83 9b3d1d45d8aeced3204b33842bb287076e54e5c0 Jonathan Leung <naruto137@gmail.com> 1372877519 -0400	commit: generated scaffold for user
-9b3d1d45d8aeced3204b33842bb287076e54e5c0 833bc4c6845c01ff011dab54caca57f593cfa9da Jonathan Leung <naruto137@gmail.com> 1372877552 -0400	commit: added user safety
-833bc4c6845c01ff011dab54caca57f593cfa9da 7d1001a84013fd61bac223121e7a987656a0b3e8 Jonathan Leung <naruto137@gmail.com> 1372878575 -0400	commit: about to do rails generate controller
